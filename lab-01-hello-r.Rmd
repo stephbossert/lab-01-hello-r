@@ -21,13 +21,9 @@ datasaurus_dozen %>%
   count(dataset) %>%
   print(13)
 ```
-
 1) 13 rows and 2 columns 
+
 ### Exercise 2
-
-The answers for this Exercise are given for you below.
-But you should clean up some of the narrative so that it only includes what you want to turn in.
-
 First let's plot the data in the dino dataset:
 
 ```{r plot-dino, fig.height=3, fig.width=6}

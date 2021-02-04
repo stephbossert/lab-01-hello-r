@@ -37,11 +37,9 @@ datasaurus_dozen %>%
     ## 12 wide_lines   142
     ## 13 x_shape      142
 
-1)  13 rows and 2 columns \#\#\# Exercise 2
+1)  13 rows and 2 columns
 
-The answers for this Exercise are given for you below. But you should
-clean up some of the narrative so that it only includes what you want to
-turn in.
+### Exercise 2
 
 First let’s plot the data in the dino dataset:
 
