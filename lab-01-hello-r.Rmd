@@ -1,7 +1,7 @@
 ---
 title: "Lab 01 - Hello R"
-author: "Insert your name here"
-date: "Insert date here"
+author: "Steph Bossert"
+date: "4 Feb 21"
 output: github_document
 ---
 
@@ -16,8 +16,13 @@ library(datasauRus)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+```{r}
+datasaurus_dozen %>%
+  count(dataset) %>%
+  print(13)
+```
 
+1) 13 rows and 2 columns 
 ### Exercise 2
 
 The answers for this Exercise are given for you below.

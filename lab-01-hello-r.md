@@ -1,7 +1,7 @@
 Lab 01 - Hello R
 ================
-Insert your name here
-Insert date here
+Steph Bossert
+4 Feb 21
 
 ## Load packages and data
 
@@ -14,9 +14,30 @@ library(datasauRus)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+``` r
+datasaurus_dozen %>%
+  count(dataset) %>%
+  print(13)
+```
 
-### Exercise 2
+    ## # A tibble: 13 x 2
+    ##    dataset        n
+    ##    <chr>      <int>
+    ##  1 away         142
+    ##  2 bullseye     142
+    ##  3 circle       142
+    ##  4 dino         142
+    ##  5 dots         142
+    ##  6 h_lines      142
+    ##  7 high_lines   142
+    ##  8 slant_down   142
+    ##  9 slant_up     142
+    ## 10 star         142
+    ## 11 v_lines      142
+    ## 12 wide_lines   142
+    ## 13 x_shape      142
+
+1)  13 rows and 2 columns \#\#\# Exercise 2
 
 The answers for this Exercise are given for you below. But you should
 clean up some of the narrative so that it only includes what you want to
