@@ -11,7 +11,6 @@ output: github_document
 library(tidyverse) 
 library(datasauRus)
 ```
-
 ## Exercises
 
 ### Exercise 1
@@ -33,19 +32,12 @@ dino_data <- datasaurus_dozen %>%
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
-
-And next calculate the correlation between `x` and `y` in this dataset:
-
 ```{r cor-dino}
 dino_data %>%
   summarize(r = cor(x, y))
 ```
 Correlation = -.065
 ### Exercise 3
-
-Add code and narrative as needed.
-
-
 
 ```{r plot-star, fig.height=3, fig.width=6}
 star_data <- datasaurus_dozen %>%
@@ -57,28 +49,38 @@ ggplot(data = star_data, mapping = aes(x = x, y = y)) +
 star_data %>%
   summarize(r = cor(x, y))
 ```
-
-I'm some text, you should replace me with more meaningful text...
-
-```{r cor-star}
-
-```
+Correlation = -0.0630 
 
 ### Exercise 4
+```{r plot-circle, fig.height=3, fig.width=6}
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
 
-Add code and narrative as needed.
-Note that two R chunks are given but they are not labeled.
-Use the convention from above to name them appropriately.
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 
-```{r}
-
+circle_data %>%
+  summarize(r = cor(x, y))
 ```
-
-```{r}
 
 ```
 
 ### Exercise 5
+ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
+  geom_point()+
+  facet_wrap(~ dataset, ncol = 3) +
+  theme(legend.position = "none")
+  
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x, y)) %>%
+  print(13)
+```{r}
+```
 
-Add code and narrative as needed.
-To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.
+
+```{r}
+```
+  
+  
+

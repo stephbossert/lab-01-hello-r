@@ -53,8 +53,6 @@ ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
 
 ![](lab-01-hello-r_files/figure-gfm/plot-dino-1.png)<!-- -->
 
-And next calculate the correlation between `x` and `y` in this dataset:
-
 ``` r
 dino_data %>%
   summarize(r = cor(x, y))
@@ -66,8 +64,6 @@ dino_data %>%
     ## 1 -0.0645
 
 Correlation = -.065 \#\#\# Exercise 3
-
-Add code and narrative as needed.
 
 ``` r
 star_data <- datasaurus_dozen %>%
@@ -89,16 +85,37 @@ star_data %>%
     ##     <dbl>
     ## 1 -0.0630
 
-I’m some text, you should replace me with more meaningful text…
+Correlation = -0.0630
 
 ### Exercise 4
 
-Add code and narrative as needed. Note that two R chunks are given but
-they are not labeled. Use the convention from above to name them
-appropriately.
+``` r
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
+
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+![](lab-01-hello-r_files/figure-gfm/plot-circle-1.png)<!-- -->
+
+``` r
+circle_data %>%
+  summarize(r = cor(x, y))
+```
+
+    ## # A tibble: 1 x 1
+    ##         r
+    ##     <dbl>
+    ## 1 -0.0683
+
+\`\`\`
 
 ### Exercise 5
 
-Add code and narrative as needed. To add R chunks either type out the
-backticks, curly braces, and the letter `r` or use the Insert chunk
-button above, green C+.
+ggplot(datasaurus\_dozen, aes(x = x, y = y, color = dataset))+
+geom\_point()+ facet\_wrap(\~ dataset, ncol = 3) + theme(legend.position
+= “none”)
+
+datasaurus\_dozen %\>% group\_by(dataset) %\>% summarize(r = cor(x, y))
+%\>% print(13)
